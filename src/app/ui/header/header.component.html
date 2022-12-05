@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawerToggle()" color="">
+            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <h1>{{appName}}</h1>
+
+        <span class="layout-fill-remaining-space"></span>
+
+        <h2>
+            <span *ngIf="opened">Welcome! {{fullName}} </span>
+            <button mat-mini-fab color="warn" (click)="logout()"><i class="material-icons"> settings_power</i></button>
+        </h2>
+
+    </mat-toolbar-row>
+</mat-toolbar>

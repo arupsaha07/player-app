@@ -1,0 +1,17 @@
+
+Fri, 11/30/2018, 17:25:19 from 127.0.0.1 : GET /api/user/getByPage
+Thu, 12/13/2018, 12:46:20 from ::ffff:127.0.0.1 : GET /api/player/getByPage
+Thu, 12/13/2018, 12:50:55 from ::ffff:127.0.0.1 : GET /api/player/getByPage
+Mon, 12/31/2018, 18:56:48 from ::ffff:127.0.0.1 : GET /
+Mon, 12/31/2018, 18:56:48 from ::ffff:127.0.0.1 : GET /runtime.js
+Mon, 12/31/2018, 18:56:48 from ::ffff:127.0.0.1 : GET /polyfills.js
+Mon, 12/31/2018, 18:56:48 from ::ffff:127.0.0.1 : GET /styles.js
+Mon, 12/31/2018, 18:56:48 from ::ffff:127.0.0.1 : GET /vendor.js
+Mon, 12/31/2018, 18:56:48 from ::ffff:127.0.0.1 : GET /main.js
+Mon, 12/31/2018, 18:56:48 from ::ffff:127.0.0.1 : GET /favicon.ico
+Mon, 12/31/2018, 18:56:50 from ::ffff:127.0.0.1 : GET /assets/img_avatar2.png
+Mon, 12/31/2018, 18:57:14 from ::ffff:127.0.0.1 : GET /api
+Mon, 12/31/2018, 18:57:14 from ::ffff:127.0.0.1 : GET /css/bootstrap.min.css
+Mon, 12/31/2018, 18:57:14 from ::ffff:127.0.0.1 : GET /js/jquery.min.js
+Mon, 12/31/2018, 18:57:14 from ::ffff:127.0.0.1 : GET /js/bootstrap.min.js
+Mon, 12/31/2018, 18:57:22 from ::ffff:127.0.0.1 : GET /api/user/getByPage?pageNo=2

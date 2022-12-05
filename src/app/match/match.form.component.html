@@ -1,0 +1,51 @@
+<div class="form-card" *ngIf="match">
+    <form [formGroup]="matchForm" (ngSubmit)="matchForm.valid && saveMatch()">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title *ngIf="!match.match_id">Add New Match</mat-card-title>
+                <mat-card-title *ngIf="match.match_id">Edit Match</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="form-container">
+                    <input type="hidden" formControlName="match_id">
+                    <mat-form-field>
+                        <mat-select placeholder="Team-1" formControlName="team_id_1" (selectionChange)="onTeamSelection($event)">
+                            <mat-option *ngFor="let team of teamList" [value]="team.team_id">
+                                {{team.name}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="matchForm.controls.team_id_1.invalid">{{getTeam_id_1Error()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-select placeholder="Team-2" formControlName="team_id_2" (selectionChange)="onTeamSelection($event)">
+                            <mat-option *ngFor="let team of teamList" [value]="team.team_id">
+                                {{team.name}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="matchForm.controls.team_id_2.invalid">{{getTeam_id_2Error()}}</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <input matInput placeholder="Description" formControlName="descr" required>
+                        <mat-error *ngIf="matchForm.controls.descr.invalid">{{getDescrError()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input type="date" matInput placeholder="Date" formControlName="date1" required>
+                        <mat-error *ngIf="matchForm.controls.date1.invalid">{{getDateError()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input type="time" matInput placeholder="Time" formControlName="time1" required>
+                        <mat-error *ngIf="matchForm.controls.time1.invalid">{{getTimeError()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input type="text" matInput placeholder="Stadium" formControlName="stadium">
+                    </mat-form-field>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button class="pull-right" mat-raised-button color="accent" type="submit">Save</button>
+                <button mat-raised-button color="" (click)="cancel()" type="button">Cancel</button>
+            </mat-card-actions>
+        </mat-card>
+    </form>
+</div>

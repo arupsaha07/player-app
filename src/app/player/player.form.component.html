@@ -1,0 +1,72 @@
+<div class="form-card" *ngIf="player">
+    <form [formGroup]="playerForm" (ngSubmit)="playerForm.valid && savePlayer()">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title *ngIf="!player.player_id">Add New Player</mat-card-title>
+                <mat-card-title *ngIf="player.player_id">Edit Player</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="form-container">
+                    <input type="hidden" formControlName="player_id">
+
+                    <mat-form-field>
+                        <input matInput placeholder="Player Name" formControlName="name" required>
+                        <mat-error *ngIf="playerForm.controls.name.invalid">{{getNameError()}}</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-select placeholder="Team" formControlName="team_id" required>
+                            <mat-option *ngFor="let team of teamList" [value]="team.team_id">
+                                {{team.name}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="playerForm.controls.team_id.invalid">{{getTeamError()}}</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <input type="text" matInput placeholder="Country" formControlName="country_id" required
+                            [matAutocomplete]="autoCountry">
+                        <mat-autocomplete autoActiveFirstOption #autoCountry="matAutocomplete" [displayWith]="displayFn"
+                            (optionSelected)="onSelectionChanged($event)">
+                            <mat-option *ngFor="let country of filteredCountries | async" [value]="country">
+                                <span>{{country.name}}</span>
+                            </mat-option>
+                        </mat-autocomplete>
+                        <mat-error *ngIf="playerForm.controls.country_id.invalid">{{getCountryError()}}</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <input matInput placeholder="Date of birth" formControlName="date_of_birth" >
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <input matInput placeholder="Batting style" formControlName="batting_style" >
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <input matInput placeholder="Bowling style" formControlName="bowling_style" >
+                    </mat-form-field>
+
+                    <div class="upload-btn-wrapper">
+                        <button mat-mini-fab type="button">
+                            <label for="fileToUpload">
+                                <mat-icon>unarchive</mat-icon>
+                            </label>
+                        </button>
+                        <input type="file" (change)="onFileChanged($event)" />
+                        <input type="hidden" formControlName="image">
+                    </div>
+                    <div class="uploaded-image">
+                        <img *ngIf="url" [src]="url" />
+                        <img *ngIf="player.image && !url" [src]="imageBasePath + player.image" />
+                    </div>
+
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button class="pull-right" mat-raised-button color="accent" type="submit">Save</button>
+                <button mat-raised-button color="" (click)="cancel()" type="button">Cancel</button>
+            </mat-card-actions>
+        </mat-card>
+    </form>
+</div>

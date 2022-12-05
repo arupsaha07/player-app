@@ -1,0 +1,32 @@
+.app-title {
+    margin: auto;
+    text-align: center;
+}
+
+.register-card{
+    width: 40%;
+    min-width: 300px;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.register-title{
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
+
+  .register-container {
+    display: flex;
+    flex-direction: column;
+    margin-top:20px;
+}
+
+.pull-right{
+    float: right;
+  }
+
+  form{
+      margin-top:20px;
+  }

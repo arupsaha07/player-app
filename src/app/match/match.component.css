@@ -1,0 +1,16 @@
+.left{
+    width: 65%;
+}
+.right{
+    width: 35%;
+}
+@media (min-width: 320px) and (max-width:855px) {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    .left,
+    .right {
+        width: 100%;
+    }
+    .right {
+        float: left;
+    }
+}

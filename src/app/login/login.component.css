@@ -1,0 +1,47 @@
+.app-title {
+    margin: auto;
+    text-align: center;
+}
+
+.login-card {
+    width: 20%;
+    min-width: 300px;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.login-title {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.login-container>* {
+    width: 100%;
+}
+
+.login-logo {
+    display: block;
+    margin: auto;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+}
+
+.login-footer-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+}
+
+.message {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

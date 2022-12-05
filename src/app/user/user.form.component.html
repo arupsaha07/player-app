@@ -1,0 +1,37 @@
+<div class="form-card" *ngIf="user">
+    <form [formGroup]="userForm" (ngSubmit)="userForm.valid && saveUser()">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title *ngIf="!user.id">Add New User</mat-card-title>
+                <mat-card-title *ngIf="user.id">Edit User</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="form-container">
+                    <input type="hidden" formControlName="id">
+                    <!-- <input type="hidden" formControlName="token"> -->
+                    <mat-form-field>
+                        <input matInput placeholder="First Name" formControlName="firstName" required>
+                        <mat-error *ngIf="userForm.controls.firstName.invalid">{{getFirstNameError()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Last Name" formControlName="lastName" required>
+                        <mat-error *ngIf="userForm.controls.lastName.invalid">{{getLastNameError()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Username" formControlName="username" required>
+                        <mat-error *ngIf="userForm.controls.username.invalid">{{getUsernameError()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input type="password" matInput placeholder="Password" formControlName="password" required>
+                        <mat-error *ngIf="userForm.controls.password.invalid">{{getPasswordError()}}</mat-error>
+                    </mat-form-field>
+                    <mat-checkbox formControlName="status" checked={{user.status}}>Status</mat-checkbox>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button class="pull-right" mat-raised-button color="accent" type="submit">Save</button>
+                <button mat-raised-button color="" (click)="cancel()" type="button">Cancel</button>
+            </mat-card-actions>
+        </mat-card>
+    </form>
+</div>

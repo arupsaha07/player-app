@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span class="app-title">{{appName}}</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-card class="error-card">
+  <mat-card-header>
+    <div mat-card-avatar class="error-header-image"></div>
+    <mat-card-title>File Not Found</mat-card-title>
+    <mat-card-subtitle>Error 404</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="assets/page_error_404.jpg" alt="Error 404">
+  <mat-card-content>
+    <p>
+      Go back to home page.
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="home()">Home</button>
+  </mat-card-actions>
+</mat-card>

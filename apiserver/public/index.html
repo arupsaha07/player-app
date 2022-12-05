@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Api Home Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="jumbotron"">
+                    <h1>Welcome to Api Service of NodeJS</h1>
+                    <span> Created By Ghulam Moinuddin</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+                <div class="col-sm-12">
+                    <div class="accordion" id="accordionExample">
+                        <!-- User Information -->
+                        <div class="card">
+                            <div class="card-header" id="user">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseUser"
+                                        aria-expanded="true" aria-controls="collapseUser">
+                                        1) User Api Information
+                                    </button>
+                                </h5>
+                            </div>
+
+                            <div id="collapseUser" class="collapse" aria-labelledby="user" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-striped">
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Route</th>
+                                                <th>HTTP verb</th>
+                                                <th>Description / Parameters</th>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td><code>/api/user/getByPage</code></td>
+                                                <td>GET</td>
+                                                <td>This will return the first 10 user list i.e. page no 1.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td><code>/api/user/getByPage?pageNo=2</code></td>
+                                                <td>GET</td>
+                                                <td>This will return the user list as per the given page no.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td><code>/api/user/get/:id</code></td>
+                                                <td>GET</td>
+                                                <td>This will return the user as per the requested id.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td><code>/api/user/getAll</code></td>
+                                                <td>GET</td>
+                                                <td>This will return the list of all users</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td><code>/api/user/authenticate</code></td>
+                                                <td>POST</td>
+                                                <td> username , password </td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td><code>/api/user/register</code></td>
+                                                <td>POST</td>
+                                                <td> firstname , lastname , username , password </td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td><code>/api/user/update</code></td>
+                                                <td>POST</td>
+                                                <td> firstname , lastname , username , password </td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td><code>/api/user/delete</code></td>
+                                                <td>POST</td>
+                                                <td> id </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Country Information -->
+                        <div class="card">
+                            <div class="card-header" id="country">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapseCountry" aria-expanded="false" aria-controls="collapseCountry">
+                                        2) Country Api Information
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseCountry" class="collapse" aria-labelledby="country" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-striped">
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Route</th>
+                                                <th>HTTP verb</th>
+                                                <th>Description / Parameters</th>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td><code>/api/country/getByPage</code></td>
+                                                <td>GET</td>
+                                                <td>This will return the first 10 country list i.e. page no 1.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td><code>/api/country/getByPage?pageNo=2</code></td>
+                                                <td>GET</td>
+                                                <td>This will return the country list as per the given page no.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td><code>/api/country/get/:id</code></td>
+                                                <td>GET</td>
+                                                <td>This will return the country as per the requested id.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td><code>/api/country/getAll</code></td>
+                                                <td>GET</td>
+                                                <td>This will return the list of all countries</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td><code>/api/country/add</code></td>
+                                                <td>POST</td>
+                                                <td> name , country_code , status </td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td><code>/api/country/update</code></td>
+                                                <td>POST</td>
+                                                <td> name , country_code , status </td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td><code>/api/country/delete</code></td>
+                                                <td>POST</td>
+                                                <td> id </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Team Information -->
+                        <div class="card">
+                            <div class="card-header" id="team">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapseTeam" aria-expanded="false" aria-controls="collapseTeam">
+                                        3) Team Api Information
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseTeam" class="collapse" aria-labelledby="team" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-striped">
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Route</th>
+                                                <th>HTTP verb</th>
+                                                <th>Description / Parameters</th>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td><code>/api/team/getByPage</code></td>
+                                                <td>GET</td>
+                                                <td>This will return the first 10 team list i.e. page no 1.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td><code>/api/team/getByPage?pageNo=2</code></td>
+                                                <td>GET</td>
+                                                <td>This will return the team list as per the given page no.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td><code>/api/team/get/:id</code></td>
+                                                <td>GET</td>
+                                                <td>This will return the team as per the requested id.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td><code>/api/team/getAll</code></td>
+                                                <td>GET</td>
+                                                <td>This will return the list of all teams</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td><code>/api/team/add</code></td>
+                                                <td>POST</td>
+                                                <td> name, code, status, image </td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td><code>/api/team/update</code></td>
+                                                <td>POST</td>
+                                                <td> name, code, status, image, team_id </td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td><code>/api/team/delete</code></td>
+                                                <td>POST</td>
+                                                <td> id </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Match Information -->
+                        <div class="card">
+                            <div class="card-header" id="match">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapseMatch" aria-expanded="false" aria-controls="collapseMatch">
+                                        4) Match Api Information
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseMatch" class="collapse" aria-labelledby="match" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-striped">
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Route</th>
+                                                <th>HTTP verb</th>
+                                                <th>Description / Parameters</th>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td><code>/api/match/getByPage</code></td>
+                                                <td>GET</td>
+                                                <td>This will return the first 10 match list i.e. page no 1.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td><code>/api/match/getByPage?pageNo=2</code></td>
+                                                <td>GET</td>
+                                                <td>This will return the match list as per the given page no.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td><code>/api/match/get/:id</code></td>
+                                                <td>GET</td>
+                                                <td>This will return the match as per the requested id.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td><code>/api/match/getAll</code></td>
+                                                <td>GET</td>
+                                                <td>This will return the list of all matches</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td><code>/api/match/add</code></td>
+                                                <td>POST</td>
+                                                <td> descr, team_id_1, team_id_2, date1, time1, stadium </td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td><code>/api/match/update</code></td>
+                                                <td>POST</td>
+                                                <td> descr, team_id_1, team_id_2, date1, time1, stadium, match_id </td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td><code>/api/match/delete</code></td>
+                                                <td>POST</td>
+                                                <td> id </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Player Information -->
+                        <div class="card">
+                            <div class="card-header" id="player">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapsePlayer" aria-expanded="false" aria-controls="collapsePlayer">
+                                        5) Player Api Information
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapsePlayer" class="collapse" aria-labelledby="player" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-striped">
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Route</th>
+                                                <th>HTTP verb</th>
+                                                <th>Description / Parameters</th>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td><code>/api/player/getByPage</code></td>
+                                                <td>GET</td>
+                                                <td>This will return the first 10 player list i.e. page no 1.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td><code>/api/player/getByPage?pageNo=2</code></td>
+                                                <td>GET</td>
+                                                <td>This will return the player list as per the given page no.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td><code>/api/player/get/:id</code></td>
+                                                <td>GET</td>
+                                                <td>This will return the player as per the requested id.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td><code>/api/player/getAll</code></td>
+                                                <td>GET</td>
+                                                <td>This will return the list of all players</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td><code>/api/player/add</code></td>
+                                                <td>POST</td>
+                                                <td> team_id, name, country_id, date_of_birth, batting_style, bowling_style, image </td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td><code>/api/player/update</code></td>
+                                                <td>POST</td>
+                                                <td> team_id, name, country_id, date_of_birth, batting_style, bowling_style, image, player_id </td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td><code>/api/player/delete</code></td>
+                                                <td>POST</td>
+                                                <td> id </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Upload Files -->
+                        <div class="card">
+                            <div class="card-header" id="upload">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseUpload" aria-expanded="false" aria-controls="collapseUpload">
+                                        6) Upload an image file
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseUpload" class="collapse" aria-labelledby="upload" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-striped">
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Route</th>
+                                                <th>HTTP verb</th>
+                                                <th>Description / Parameters</th>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td><code>/api/upload</code></td>
+                                                <td>POST</td>
+                                                <td>image, folderName </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+<script>
+    $(document).ready(() => {
+        var base_url = $(location).attr('href').replace($(location).attr('pathname'), '');
+        var table_count = $("table").length;
+        for (var i = 0; i < table_count; i++) {
+            var row_count = $("table:eq(" + i + ") tr").length;
+            for (var j = 1; j < row_count; j++) {
+                let urls = $("table:eq(" + i + ") tr:eq(" + j + ") td:eq(1) code").text();
+                urls = base_url + urls;
+                $("table:eq(" + i + ") tr:eq(" + j + ") td:eq(1) code").text(urls);
+                $("table:eq(" + i + ") tr:eq(" + j + ") td:eq(0)").text(j);
+            }
+        }
+    });
+</script>
+
+</html>

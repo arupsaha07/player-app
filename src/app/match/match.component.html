@@ -1,0 +1,79 @@
+<app-layout>
+  <div class="component-heading">
+    <mat-toolbar color="accent">
+      <mat-toolbar-row>
+        <span>Match Page</span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </div>
+  <div class="content">
+
+    <div class="add-button">
+      <button mat-mini-fab (click)="addMatch()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+
+    <div class="right">
+      <app-match-form [match]="selectedMatch" [teamList]="teamList"></app-match-form>
+    </div>
+
+    <div class="left">
+
+      <mat-spinner [diameter]="50" [style.display]="!matchList ? 'block' : 'none'"></mat-spinner>
+
+      <table *ngIf="matchList" mat-table [dataSource]="matchList" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+                        The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- descr Column -->
+        <ng-container matColumnDef="descr">
+          <th mat-header-cell *matHeaderCellDef> Description </th>
+          <td mat-cell *matCellDef="let c"> {{c.descr}} </td>
+        </ng-container>
+
+        <!-- team_id_1 Column -->
+        <ng-container matColumnDef="team_id_1">
+          <th mat-header-cell *matHeaderCellDef> Team 1 </th>
+          <td mat-cell *matCellDef="let c"> {{filterTeam(c.team_id_1)}} </td>
+        </ng-container>
+
+        <!-- team_id_2 Column -->
+        <ng-container matColumnDef="team_id_2">
+          <th mat-header-cell *matHeaderCellDef> Team 2 </th>
+          <td mat-cell *matCellDef="let c"> {{filterTeam(c.team_id_2)}} </td>
+        </ng-container>
+
+        <!-- date1 Column -->
+        <ng-container matColumnDef="date1">
+          <th mat-header-cell *matHeaderCellDef> Date </th>
+          <td mat-cell *matCellDef="let c"> {{c.date1}} </td>
+        </ng-container>
+
+        <!-- time1 Column -->
+        <ng-container matColumnDef="time1">
+          <th mat-header-cell *matHeaderCellDef> Time </th>
+          <td mat-cell *matCellDef="let c"> {{c.time1}} </td>
+        </ng-container>
+
+        <!-- Action Column -->
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef> Action </th>
+          <td mat-cell *matCellDef="let c">
+            <div class="btn">
+              <button class="btn-gap" mat-mini-fab color="primary" (click)="editMatch(c)"><i class="material-icons">edit</i></button>
+              <button class="btn-gap" mat-mini-fab (click)="deleteMatch(c.match_id)"><i class="material-icons">delete</i></button>
+            </div>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      </table>
+      <mat-paginator [length]="recordsLength" [pageSize]="10" showFirstLastButtons (page)="onPaginateChange($event)"></mat-paginator>
+    </div>
+
+  </div>
+</app-layout>

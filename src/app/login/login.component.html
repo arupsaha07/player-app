@@ -1,0 +1,45 @@
+<form [formGroup]="loginForm" (ngSubmit)="loginForm.valid && userLogin()">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span class="app-title">{{appName}}</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-card class="login-card">
+    <mat-divider></mat-divider>
+
+    <mat-card-header class="login-title">
+      <mat-card-title>
+        <h3>Authentication Required</h3>
+      </mat-card-title>
+    </mat-card-header>
+    <img class="login-logo" mat-card-md-image src="assets/img_avatar2.png" alt="User Logo">
+
+    <mat-toolbar class="message" color="accent" *ngIf="showMessage">
+      <mat-toolbar-row>
+        <span class="app-title">{{showMessage}}</span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+
+    <mat-card-content>
+      <div class="login-container">
+        <mat-form-field>
+          <input matInput placeholder="Username" formControlName="username" required>
+          <mat-error *ngIf="loginForm.controls.username.invalid">{{getUsernameError()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Password" formControlName="password" type="password" required>
+          <mat-error *ngIf="loginForm.controls.password.invalid">{{getPasswordError()}}</mat-error>
+        </mat-form-field>
+      </div>
+      <mat-spinner [diameter]="30" [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+    </mat-card-content>
+    <mat-card-actions>
+      <button id="userLogin" class="pull-right userLoginBtn" mat-raised-button color="accent" type="submit">Login</button>
+      <button mat-raised-button color="" routerLink="/register">Register</button>
+    </mat-card-actions>
+
+
+  </mat-card>
+</form>

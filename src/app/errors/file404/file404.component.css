@@ -1,0 +1,15 @@
+.app-title {
+    margin: auto;
+    text-align: center;
+}
+.error-header-image {
+    background-image: url('/assets/icon_error_404.jpg');
+    background-size: cover;
+  }
+.error-card{
+    width: 40%;
+    min-width: 300px;
+    height: auto;
+    display: block;
+    margin: auto;
+}

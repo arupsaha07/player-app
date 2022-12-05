@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>
+  <mat-toolbar color="primary" *ngIf="!error">
+    <mat-toolbar-row>
+      <span class="pull-center">{{title}}</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-toolbar color="warn" *ngIf="error">
+    <mat-toolbar-row>
+      <span class="pull-center">{{title}}</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</h1>
+<div mat-dialog-content>
+  <p class="message">{{message}}</p>
+</div>
+<div mat-dialog-actions>
+  <div class="content" *ngIf="!showYesNoButton">
+    <div class="left">
+      <button mat-raised-button (click)="onCancel()" *ngIf="showCancelButton">Cancel</button>
+    </div>
+    <div class="right">
+      <button class="pull-right" color="accent" mat-raised-button [mat-dialog-close]="{return:true}" cdkFocusInitial>Ok</button>
+    </div>
+  </div>
+  <div class="content" *ngIf="showYesNoButton">
+    <div class="left">
+      <button mat-raised-button (click)="onCancel()">No</button>
+    </div>
+    <div class="right">
+      <button class="pull-right" color="warn" mat-raised-button [mat-dialog-close]="{return:true}" cdkFocusInitial>Yes</button>
+    </div>
+  </div>
+</div>
